@@ -23,9 +23,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-showcase.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-showcase.pro', 'proguard-test.pro'
         }
     }
 
@@ -39,13 +43,6 @@ android {
         }
 
         internal {
-            buildTypes {
-                debug {
-                    minifyEnabled true
-                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-showcase.pro'
-                    testProguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-showcase.pro', 'proguard-test.pro'
-                }
-            }
         }
     }
 
